@@ -7,6 +7,55 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
+      bottomNavigationBar: Container(
+        height: 86.0,
+        decoration: BoxDecoration(
+          color: Colors.white,
+        ),
+        padding: new EdgeInsets.only(top: 20.0),
+        child: new Theme(
+          data: Theme.of(context).copyWith(
+            // sets the background color of the `BottomNavigationBar`
+            canvasColor: Colors.white,
+            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+            primaryColor: Colors.red,
+            bottomAppBarColor: Colors.green,
+            textTheme: Theme.of(context).textTheme.copyWith(
+                  caption: new TextStyle(color: Colors.grey),
+                ),
+          ), // sets the inactive color of the `BottomNavigationBar`
+          child: new BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            currentIndex: 0,
+            items: [
+              BottomNavigationBarItem(
+                label: '',
+                icon: new Icon(Icons.home),
+                backgroundColor: Colors.black,
+              ),
+              BottomNavigationBarItem(
+                label: 'search',
+                icon: new Icon(Icons.search),
+              ),
+              BottomNavigationBarItem(
+                label: 'home',
+                icon: Icon(
+                  Icons.bookmark_border,
+                  color: Colors.transparent,
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: 'home',
+                icon: Icon(Icons.perm_identity),
+              ),
+              BottomNavigationBarItem(
+                label: 'home',
+                icon: Icon(Icons.more_horiz),
+              ),
+            ],
+          ),
+        ),
+      ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
           child: Column(
@@ -55,97 +104,97 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 16,
           ),
-          ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              Container(
-                height: 32,
-                width: 160,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.grey[100],
-                  border: Border.all(color: Colors.black45),
-                ),
-                child: Center(
-                  child: Text(
-                    "Furniture",
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 12,
-              ),
-              Container(
-                height: 32,
-                width: 160,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.grey[100],
-                  border: Border.all(color: Colors.black45),
-                ),
-                child: Center(
-                  child: Text(
-                    "Furniture",
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 12,
-              ),
-              Container(
-                height: 32,
-                width: 160,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.grey[100],
-                  border: Border.all(color: Colors.black45),
-                ),
-                child: Center(
-                  child: Text(
-                    "Furniture",
-                  ),
-                ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              ItemCard(),
-              ItemCard(),
-              ItemCard(),
-            ],
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Furniture",
-                ),
-                Text(
-                  "See all",
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          ListView(
-            children: [
-              SmallItemCard(),
-              SmallItemCard(),
-              SmallItemCard(),
-            ],
-          )
+          // ListView(
+          //   scrollDirection: Axis.horizontal,
+          //   children: [
+          //     Container(
+          //       height: 32,
+          //       width: 160,
+          //       decoration: BoxDecoration(
+          //         borderRadius: BorderRadius.circular(12),
+          //         color: Colors.grey[100],
+          //         border: Border.all(color: Colors.black45),
+          //       ),
+          //       child: Center(
+          //         child: Text(
+          //           "Furniture",
+          //         ),
+          //       ),
+          //     ),
+          //     SizedBox(
+          //       width: 12,
+          //     ),
+          //     Container(
+          //       height: 32,
+          //       width: 160,
+          //       decoration: BoxDecoration(
+          //         borderRadius: BorderRadius.circular(12),
+          //         color: Colors.grey[100],
+          //         border: Border.all(color: Colors.black45),
+          //       ),
+          //       child: Center(
+          //         child: Text(
+          //           "Furniture",
+          //         ),
+          //       ),
+          //     ),
+          //     SizedBox(
+          //       width: 12,
+          //     ),
+          //     Container(
+          //       height: 32,
+          //       width: 160,
+          //       decoration: BoxDecoration(
+          //         borderRadius: BorderRadius.circular(12),
+          //         color: Colors.grey[100],
+          //         border: Border.all(color: Colors.black45),
+          //       ),
+          //       child: Center(
+          //         child: Text(
+          //           "Furniture",
+          //         ),
+          //       ),
+          //     )
+          //   ],
+          // ),
+          // SizedBox(
+          //   height: 16,
+          // ),
+          // // ListView(
+          // //   scrollDirection: Axis.horizontal,
+          // //   children: [
+          // //     ItemCard(),
+          // //     ItemCard(),
+          // //     ItemCard(),
+          // //   ],
+          // // ),
+          // // SizedBox(
+          // //   height: 16,
+          // // ),
+          // // Padding(
+          // //   padding: EdgeInsets.symmetric(horizontal: 16),
+          // //   child: Row(
+          // //     mainAxisAlignment: MainAxisAlignment.center,
+          // //     children: [
+          // //       Text(
+          // //         "Furniture",
+          // //       ),
+          // //       Text(
+          // //         "See all",
+          // //       ),
+          // //     ],
+          // //   ),
+          // // ),
+          // // SizedBox(
+          // //   height: 16,
+          // // ),
+          // // ListView(
+          // //   children: [
+          // //     SmallItemCard(),
+          // //     SmallItemCard(),
+          // //     SmallItemCard(),
+          // //   ],
+          // // )
         ],
       )),
     );
